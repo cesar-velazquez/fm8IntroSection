@@ -11,7 +11,7 @@ const Body = () => {
                     <img className='sm:block hidden' src="/images/image-hero-desktop.png" alt="User" />
                 </div>
                 <article className='px-4 sm:h-[300px] sm:m-auto  ' >
-                    <div className='flex gap-1 justify-center p-8 sm:grid sm:justify-start sm:px-4'>
+                    <div className='flex gap-1 justify-center py-8 sm:p-8 sm:grid sm:justify-start sm:px-4'>
                         <h1 className='text-center text-3xl font-bold
                 sm:text-4xl sm:flex 
                 lg:text-7xl' >Make</h1>

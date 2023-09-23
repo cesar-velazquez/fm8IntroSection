@@ -44,19 +44,20 @@ const Header = () => {
         }
     }, [isopen, isCompany])
     return (
-        <section>
+        <section className=''>
             <nav className='flex font-bold text-4xl justify-between p-2 ' >
                 <section className='flex items-center gap-14'>
                     <h1 className='' >snap</h1>
                     <section className='hidden sm:block ' >
-                        <ul className='sm:flex sm:gap-4 sm:text-xs md:text-[16px] sm:text-MediumGray cursor-pointer 
+                        <ul className='sm:flex sm:items-center sm:gap-4 sm:text-xs md:text-[16px] 
+                        sm:text-MediumGray cursor-pointer 
                         '>
 
                             <div className='relative'>
                                 <div className='' 
                                 onClick={handleOpen}
                                 ref={menuRef} >
-                                    <span>Features</span>
+                                    <span className='hover:text-black hover:font-bold' >Features</span>
                                     <i className='bx bx-chevron-down '></i>
                                 </div>
                                 {
@@ -94,7 +95,7 @@ const Header = () => {
                                 ref={menuRefCompany}
                                 onClick={handleOpenCompany}
                                 >
-                                    <span>Company</span>
+                                    <span className='hover:text-black hover:font-bold' >Company</span>
                                     <i className='bx bx-chevron-down'></i>
                                 </div>
                                 {
@@ -118,19 +119,19 @@ const Header = () => {
                                 }
                             </div>
 
-                            <li>Careers</li>
-                            <li>About</li>
+                            <li className='hover:text-black hover:font-bold' >Careers</li>
+                            <li className='hover:text-black hover:font-bold' >About</li>
                         </ul>
 
                     </section>
                 </section>
 
-                <section className='flex items-center gap-4 px-4' >
+                <section className='sm:flex sm:items-center sm:gap-4 sm:px-4' >
                     <i className='sm:hidden bx bx-menu cursor-pointer'></i>
                     <button className='hidden sm:block text-xs sm:text-[16px] text-MediumGray 
-                    font-normal '>Login</button>
+                    font-normal hover:text-black hover:font-bold'>Login</button>
                     <button className='hidden sm:block text-xs font-normal border border-gray-500 
-                    px-4 py-2 rounded-xl  text-MediumGray sm:text-[16px] ' >Register</button>
+                    px-4 py-2 rounded-xl  text-MediumGray sm:text-[16px] hover:text-black hover:font-bold' >Register</button>
                 </section>
             </nav>
         </section>
