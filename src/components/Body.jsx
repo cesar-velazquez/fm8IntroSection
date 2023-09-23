@@ -4,12 +4,14 @@ import { AudioPhile, Databiz, Maker, Meet } from '../shared/Icons'
 const Body = () => {
     return (
         <section className='  sm:p-4 min-h-screen grid grid-rows-[1fr_auto]  ' >
-            <section className='sm:flex sm:flex-row-reverse sm:py-32 '>
-                <div className='py-4 ' >
-                    <img className='' src="/images/image-hero-mobile.png" alt="User" />
+            <section className=' sm:flex sm:flex-row-reverse sm:pt-8
+            '>
+                <div className='pt-4' >
+                    <img className='sm:hidden ' src="/images/image-hero-mobile.png" alt="User" />
+                    <img className='sm:block hidden' src="/images/image-hero-desktop.png" alt="User" />
                 </div>
                 <article className='px-4 sm:h-[300px] sm:m-auto  ' >
-                    <div className='flex gap-1 justify-center sm:grid sm:justify-start sm:px-4'>
+                    <div className='flex gap-1 justify-center p-8 sm:grid sm:justify-start sm:px-4'>
                         <h1 className='text-center text-3xl font-bold
                 sm:text-4xl sm:flex 
                 lg:text-7xl' >Make</h1>
@@ -25,8 +27,9 @@ const Body = () => {
                 </article>
             </section>
 
-
-            <section className='flex justify-center items-center gap-4 px-4 py-4'>
+            <section 
+            className='flex justify-center items-center gap-4 px-4 pb-4
+            sm:w-[50%] '>
                 <Databiz />
                 <AudioPhile />
                 <Meet />
