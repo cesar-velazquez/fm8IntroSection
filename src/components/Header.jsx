@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Calendar, Planing, Reminder, TodoList } from '../shared/Icons';
+import { Link } from 'react-router-dom';
+import Login from '../Pages/Login';
 
 const Header = () => {
     const [isopen, setIsopen] = useState(false);
@@ -84,7 +86,7 @@ const Header = () => {
                             <div className="relative">
                                 <div onClick={handleOpen} ref={menuRef}>
                                     <span className="hover:text-black hover:font-bold">Features</span>
-                                    <i className="bx bx-chevron-down "></i>
+                                    <i className={`bx ${isopen ? 'bx-chevron-up' : 'bx-chevron-down'}  `}></i>
                                 </div>
                                 {isopen ? (
                                     <div className="absolute sm:top-6 sm:left-[-95px] sm:grid sm:gap-2 md:top-8 md:left-[-80px] shadow-lg shadow-black py-4 px-5 rounded-lg bg-[#ffffff]">
@@ -121,7 +123,7 @@ const Header = () => {
                             <div>
                                 <div ref={menuRefCompany} onClick={handleOpenCompany}>
                                     <span className="hover:text-black hover:font-bold">Company</span>
-                                    <i className="bx bx-chevron-down"></i>
+                                    <i className={` bx ${isCompany ? 'bx-chevron-up' : 'bx-chevron-down'} `}></i>
                                 </div>
                                 {isCompany ? (
                                     <div className="absolute py-4 px-5 rounded-lg shadow-black shadow-md bg-[#ffffff] grid gap-3">
@@ -146,16 +148,19 @@ const Header = () => {
                     </section>
                 </section>
 
+
+
                 <div
                     id="sectionMobile"
                     ref={menuMobileRef}
-                    className="sm:flex sm:items-center sm:gap-4 sm:px-4"
-                >
-                    <i onClick={handleMobileMenuClick} className="sm:hidden z-50 bx bx-menu cursor-pointer"></i>
+                    className="sm:flex sm:items-center sm:gap-4 sm:px-4">
+                    <i onClick={handleMobileMenuClick} 
+                    className={`sm:hidden relative z-20
+                    bx ${isOpenMobile ? 'bx-x bx-spin' : 'bx-menu'} cursor-pointer`}></i>
                     {isOpenMobile ? (
-                        <div className="absolute right-0 w-[210px] transition duration-1000 
-                        min-h-screen aspect-square shadow-black shadow-2xl 
-                        bg-white pt-10 flex flex-col gap-2 sm:hidden ">
+                        <div className="z-10 absolute top-0 bottom-0 right-0 w-[210px] h-[117%]
+                        transition duration-1000 shadow-black shadow-2xl 
+                        bg-white pt-16 flex flex-col gap-2 sm:hidden ">
                             <div>
                                 <div onClick={handleOpenFeatures} className="flex items-center justify-start px-4">
                                     <span className="text-[17px] grid justify-center">Features</span>
@@ -224,11 +229,11 @@ const Header = () => {
                                 </div>
 
                                 <div className='grid justify-center text-[17px] gap-4 '>
-                                    <button>Login</button>
+                                    <Link to={'login'}>Login</Link>
                                 </div>
 
                                 <div className='text-[17px] flex justify-center mx-4 ' >
-                                    <button className='w-[100%] border-2 border-MediumGray rounded-2xl ' >Register</button>
+                                    <Link to={'register'} className='w-[100%] flex justify-center border-2 border-MediumGray rounded-3xl ' >Register</Link>
                                 </div>
                             </section>
                         </div>
@@ -236,8 +241,8 @@ const Header = () => {
                         <div className=""></div>
                     )
                     }
-                    <button className="hidden sm:block text-xs sm:text-[16px] text-MediumGray font-normal hover:text-black hover:font-bold">Login</button>
-                    <button className="hidden sm:block text-xs font-normal border border-gray-500 px-4 py-2 rounded-xl text-MediumGray sm:text-[16px] hover:text-black hover:font-bold">Register</button>
+                    <Link to={'Login'} className="hidden sm:block text-xs sm:text-[16px] text-MediumGray font-normal hover:text-black hover:font-bold">Login</Link>
+                    <Link to={'register'} className="hidden sm:block text-xs font-normal border border-gray-500 px-4 py-2 rounded-xl text-MediumGray sm:text-[16px] hover:text-black hover:font-bold">Register</Link>
                 </div>
             </nav>
         </section>
